@@ -1,4 +1,26 @@
+@import url(game.css);
+
+:root {
+
+    --background-container: #d9d9d9; 
+    --background-showdown-container: rgba(32, 36, 40, 0.041); 
+    --background-question-exercise: #8c52ff28; 
+    --background-exercises-text: #a6a6a659; 
+    --background-resp-01: #7ed957; 
+    --background-resp-02: #ffde59; 
+    --background-resp-03: #38b6ff; 
+    --background-resp-04: #ff3131;
+    --font-color: #000000;
+}
+
 #slide-bar {
     width: 220px; 
     top: 56px;
+}
+
+main{
+    display: flex;
+    margin-top: 5%;
+    align-items: center;
+    justify-content: center;
 }
