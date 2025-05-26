@@ -1,11 +1,58 @@
+import { accessOpen } from './accessOpenAi.js'
 
 let resp_question = ""
 
-async function carregarPergunta() {
-    const resposta = await fetch('http://localhost:3000/api');
-    const dados = await resposta.json();
+document.addEventListener("DOMContentLoaded", () => {
 
-    console.log(dados)
+    carregarPergunta();
+
+    document.getElementById("btn-proxima-questao").addEventListener("click", (e) => {
+        e.preventDefault();
+        carregarPergunta();
+    });
+
+    document.getElementById("resp-01").addEventListener("click", (e) => {
+        e.preventDefault();
+        verResposta('a');
+    });
+    document.getElementById("resp-02").addEventListener("click", (e) => {
+        e.preventDefault();
+        verResposta('b');
+    });
+    document.getElementById("resp-03").addEventListener("click", (e) => {
+        e.preventDefault();
+        verResposta('c');
+    });
+    document.getElementById("resp-04").addEventListener("click", (e) => {
+        e.preventDefault();
+        verResposta('d');
+    });
+
+
+})
+
+async function carregarPergunta() {
+
+    const prompt = `Gere uma Questão de múltipla escolha sobre JavaScript 
+    (uso de for, while, condições, arrays, tipos de dados, formatações, abre e fecha conchets, codigos com erros, 
+    outros assuntos para logicas com js). sompre gere uma questões diferente das anteriores.
+    Formato JSON:
+        {
+        "enunciado": "...",
+        "codigo": "...",
+        "alternativas": { "a": "...", "b": "...", "c": "...", "d": "..." },
+        "respostaCorreta": "..."
+        }
+
+    A Questão deve conter (Obrigatoriamente):
+    - Um pequeno trecho de código.
+    - enunciado: Qual é a saída?
+    - codigo: codigo do enunciado.
+    - 4 alternativas (a, b, c, d).
+    - Informe a resposta correta em 'respostaCorreta'.
+    `;
+
+    const dados = await accessOpen(prompt)
 
     document.getElementById('exercises-text').innerText = dados.codigo;
 
@@ -18,19 +65,25 @@ async function carregarPergunta() {
 
     resp_question = dados.respostaCorreta
 
-    console.log(resp_question)
-
-    //   console.log(alternativas)
+    document.getElementById("notification-acerto").style.display = "none"
 
 }
 
-function verResposta(resp){
+async function verResposta(resp) {
 
-    if (resp == resp_question){
+    if (resp == resp_question) {
         console.log("Acertou!")
+        document.getElementById("notification-acerto").style.display = "block"
+        document.getElementById("notification-acerto").style.color = "green"
+        document.getElementById("notification-acerto").innerText = "Parabéns Você Acertou!"
+
         carregarPergunta()
     }
     else {
         console.log("Errou!")
+        document.getElementById("notification-acerto").style.display = "block"
+        document.getElementById("notification-acerto").innerText = "Revise novamente, Resposta Errada!"
+        document.getElementById("notification-acerto").style.color = "red"
+
     }
 }

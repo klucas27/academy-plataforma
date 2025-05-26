@@ -1,9 +1,10 @@
 @import url(game.css);
+@import url(practice.css);
 
 :root {
 
     --background-container: #d9d9d9; 
-    --background-showdown-container: rgba(32, 36, 40, 0.041); 
+    --background-showdown-container: rgba(122, 125, 128, 0.301); 
     --background-question-exercise: #8c52ff28; 
     --background-exercises-text: #a6a6a659; 
     --background-resp-01: #7ed957; 
