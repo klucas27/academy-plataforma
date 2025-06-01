@@ -27,3 +27,21 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+#div-master-index{
+    max-width: 700px;
+}
+
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: auto !important;
+    z-index: 1050;
+}
+
+#userMenu {
+    width: 40px; 
+    height: 40px; 
+    padding: 0;
+}

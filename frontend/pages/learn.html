@@ -7,29 +7,48 @@
     <title>Bug Hunter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body class="bg-light">
 
     <!-- Header fixo no topo -->
     <header class="navbar navbar-dark bg-dark fixed-top shadow">
-        <div class="container-fluid">
+        <div class="container-fluid align-items-center d-flex">
             <!-- Botão para abrir o menu lateral em telas pequenas -->
             <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#slide-bar" aria-controls="slide-bar" aria-label="Abrir menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <span class="navbar-brand mb-0 h1">Bug Hunter</span>
-            <ul class="navbar-nav flex-row ms-auto">
+            <ul class="navbar-nav flex-row ms-auto align-items-center">
                 <li class="nav-item me-3">
                     <span class="badge bg-success fs-6">20pts</span>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item me-3">
                     <span class="badge bg-danger fs-6">5 Vidas</span>
+                </li>
+                <li class="nav-item dropdown position-static">
+                    <button class="btn btn-light rounded-circle d-flex align-items-center justify-content-center"
+                        id="userMenu" data-bs-toggle="dropdown" aria-expanded="false" title="Usuário">
+                        <i class="fa-solid fa-user text-primary"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="#">Sair</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
     </header>
+
 
     <!-- Slide-bar lateral esquerda -->
     <div class="offcanvas offcanvas-start d-md-flex flex-column flex-shrink-0 p-3 bg-white shadow" tabindex="-1"
@@ -41,7 +60,7 @@
         <!-- <h2 class="mb-4 text-primary d-none d-md-block">Bug Hunter</h2> -->
         <ul class="nav nav-pills flex-column mb-auto">
             <li><a href="../index.html" class="nav-link text-dark">Início</a></li>
-            <li class="nav-item"><a href="aprender.html" class="nav-link active" aria-current="page">Aprender</a></li>
+            <li class="nav-item"><a href="learn.html" class="nav-link active" aria-current="page">Aprender</a></li>
             <li><a href="practice.html" class="nav-link text-dark">Praticar</a></li>
             <li><a href="game.html" class="nav-link text-dark">Game</a></li>
             <li><a href="feedbacks.html" class="nav-link text-dark">Feedbacks</a></li>
@@ -54,14 +73,18 @@
             <div class="container bg-white shadow p-4 rounded" id="div-master-aprender">
                 <h2 class="text-primary text-center mb-4">Aprenda Lógica de Programação com JavaScript</h2>
                 <p class="lead text-center mb-4">
-                    JavaScript é uma das linguagens de programação mais populares do mundo, usada tanto no frontend quanto no backend. Aqui você vai aprender os conceitos básicos de lógica de programação usando JavaScript, com exemplos práticos e dicas para iniciantes.
+                    JavaScript é uma das linguagens de programação mais populares do mundo, usada tanto no frontend
+                    quanto no backend. Aqui você vai aprender os conceitos básicos de lógica de programação usando
+                    JavaScript, com exemplos práticos e dicas para iniciantes.
                 </p>
 
                 <hr class="mb-4">
 
                 <h4 class="text-success mb-3">1. Variáveis e Tipos de Dados</h4>
                 <p>
-                    Variáveis são usadas para armazenar valores. Em JavaScript, você pode declarar variáveis usando <code>let</code>, <code>const</code> ou <code>var</code> (evite <code>var</code> em códigos modernos).
+                    Variáveis são usadas para armazenar valores. Em JavaScript, você pode declarar variáveis usando
+                    <code>let</code>, <code>const</code> ou <code>var</code> (evite <code>var</code> em códigos
+                    modernos).
                 </p>
                 <pre class="bg-light p-3 rounded"><code>let nome = "Maria";
 const idade = 20;
@@ -71,7 +94,8 @@ let ativo = true;</code></pre>
                     <li><strong>Number</strong>: números (<code>10</code>, <code>3.14</code>)</li>
                     <li><strong>Boolean</strong>: verdadeiro ou falso (<code>true</code>, <code>false</code>)</li>
                     <li><strong>Array</strong>: lista de valores (<code>[1, 2, 3]</code>)</li>
-                    <li><strong>Object</strong>: estrutura com propriedades (<code>{ nome: "Ana", idade: 18 }</code>)</li>
+                    <li><strong>Object</strong>: estrutura com propriedades (<code>{ nome: "Ana", idade: 18 }</code>)
+                    </li>
                 </ul>
 
                 <h4 class="text-success mt-4 mb-3">2. Operadores</h4>
@@ -79,8 +103,11 @@ let ativo = true;</code></pre>
                     Operadores são usados para realizar operações matemáticas, comparações e lógicas.
                 </p>
                 <ul>
-                    <li><strong>Aritméticos:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code></li>
-                    <li><strong>Comparação:</strong> <code>==</code>, <code>===</code>, <code>!=</code>, <code>!==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+                    <li><strong>Aritméticos:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,
+                        <code>%</code></li>
+                    <li><strong>Comparação:</strong> <code>==</code>, <code>===</code>, <code>!=</code>,
+                        <code>!==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>
+                    </li>
                     <li><strong>Lógicos:</strong> <code>&&</code> (E), <code>||</code> (OU), <code>!</code> (NÃO)</li>
                 </ul>
                 <pre class="bg-light p-3 rounded"><code>let a = 5;
@@ -170,12 +197,14 @@ console.log(pessoa.saudacao());</code></pre>
                     <li>Pratique bastante! A lógica se aprende resolvendo problemas.</li>
                     <li>Leia mensagens de erro com atenção, elas ajudam a encontrar e corrigir bugs.</li>
                     <li>Comente seu código para facilitar o entendimento.</li>
-                    <li>Explore a documentação oficial: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
-                            target="_blank" rel="noopener">MDN Web Docs</a></li>
+                    <li>Explore a documentação oficial: <a
+                            href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank"
+                            rel="noopener">MDN Web Docs</a></li>
                 </ul>
 
                 <div class="alert alert-info mt-4" role="alert">
-                    <strong>Pronto para praticar?</strong> Use o menu lateral para acessar exercícios e jogos interativos!
+                    <strong>Pronto para praticar?</strong> Use o menu lateral para acessar exercícios e jogos
+                    interativos!
                 </div>
             </div>
         </div>

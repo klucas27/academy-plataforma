@@ -19,19 +19,32 @@
 
     <!-- Header fixo no topo -->
     <header class="navbar navbar-dark bg-dark fixed-top shadow">
-        <div class="container-fluid">
+        <div class="container-fluid align-items-center d-flex">
             <!-- Botão para abrir o menu lateral em telas pequenas -->
             <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#slide-bar" aria-controls="slide-bar" aria-label="Abrir menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <span class="navbar-brand mb-0 h1">Bug Hunter</span>
-            <ul class="navbar-nav flex-row ms-auto">
+            <ul class="navbar-nav flex-row ms-auto align-items-center">
                 <li class="nav-item me-3">
                     <span class="badge bg-success fs-6">20pts</span>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item me-3">
                     <span class="badge bg-danger fs-6">5 Vidas</span>
+                </li>
+                <li class="nav-item dropdown position-static">
+                    <button class="btn btn-light rounded-circle d-flex align-items-center justify-content-center"
+                        id="userMenu" data-bs-toggle="dropdown" aria-expanded="false" title="Usuário">
+                        <i class="fa-solid fa-user text-primary"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-danger" href="#">Sair</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -48,7 +61,7 @@
         <!-- <h2 class="mb-4 text-primary d-none d-md-block">Bug Hunter</h2> -->
         <ul class="nav nav-pills flex-column mb-auto">
             <li><a href="../index.html" class="nav-link text-dark">Início</a></li>
-            <li><a href="aprender.html" class="nav-link text-dark">Aprender</a></li>
+            <li><a href="learn.html" class="nav-link text-dark">Aprender</a></li>
             <li><a href="practice.html" class="nav-link text-dark">Praticar</a></li>
             <li class="nav-item"><a href="game.html" class="nav-link active" aria-current="page">Game</a></li>
             <li><a href="feedbacks.html" class="nav-link text-dark">Feedbacks</a></li>
