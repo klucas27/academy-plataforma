@@ -51,7 +51,45 @@
 
     <!-- Conteúdo principal -->
     <main class="container-fluid main-content">
-        <!-- Adicione seu conteúdo aqui -->
+        <div class="showdown-container">
+            <form id="form-feedback" class="w-100" action="#">
+                <h3 class="mb-4 text-primary text-center">Envie seu Feedback</h3>
+                <div class="mb-3">
+                    <label for="name-insert" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name-insert" placeholder="Digite seu nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email-insert" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email-insert" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="school-insert" class="form-label">Escola</label>
+                    <input type="text" class="form-control" id="school-insert" placeholder="Nome da escola" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject-insert" class="form-label">Assunto</label>
+                    <input type="text" class="form-control" id="subject-insert" placeholder="Assunto do feedback" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message-insert" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message-insert" rows="4" placeholder="Digite sua mensagem" required></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="rating-insert" class="form-label">Nota para a Plataforma</label>
+                    <select class="form-select" id="rating-insert" required>
+                        <option value="">Selecione</option>
+                        <option value="5">5 - Excelente</option>
+                        <option value="4">4 - Muito Bom</option>
+                        <option value="3">3 - Bom</option>
+                        <option value="2">2 - Regular</option>
+                        <option value="1">1 - Ruim</option>
+                    </select>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">Enviar Feedback</button>
+                </div>
+            </form>
+        </div>
     </main>
     <script src="scripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
