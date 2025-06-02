@@ -88,7 +88,7 @@
 #resp-exercise {
     display: flex;
     flex-wrap: wrap;
-    gap: 10rem;
+    gap: 1rem;
     border-radius: 18px;
     width: 100%;
     justify-content: center;
@@ -96,24 +96,24 @@
 }
 
 #resp-exercise a {
+    flex: 1 1 180px;
+    min-width: 120px;
+    max-width: 100%;
+    padding: 1rem 1.5rem;
+    min-height: 3rem;
+    border-radius: 18px;
+    color: var(--font-color);
+    font-size: 1.2rem;
+    transition: background 0.2s;
+    font-weight: 500;
+    box-shadow: 0 2px 8px #0001;
+    word-break: break-word;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    /* width: 12vw; */
-    padding: 0 2rem;
-    height: 8vh;
-    border-radius: 18px;
-    color: var(--font-color);
-    font-size: 1.8rem;
-    transition: background 0.2s;
-    font-weight: 500;
-    box-shadow: 0 2px 8px #0001;
-    white-space: nowrap;
-}
-
-#resp-exercise a:hover {
-    filter: brightness(0.95);
+    /* white-space: normal; */
 }
 
 #resp-01 {
