@@ -1,7 +1,7 @@
 
 export async function accessOpen(prompt) {
 
-    const resposta = await fetch(`http://localhost:3000/api`, {
+    const resposta = await fetch(`http://localhost:3001/api`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
