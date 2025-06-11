@@ -23,6 +23,7 @@
 
 main{
     display: flex;
+    /* min-height: 100vh; */
     margin-top: 5%;
     align-items: center;
     justify-content: center;
