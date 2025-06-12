@@ -3,7 +3,7 @@ import { gerarPergunta } from '../services/openai.service.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/openai', async (req, res) => {
 
   const prompt = req.body.prompt;
 
