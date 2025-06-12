@@ -3,6 +3,7 @@ import './loadEnv.js'
 import express from 'express';
 import cors  from 'cors'
 import desafioRoutes from './routes/openai.routes.js';
+import usersRoutes from './routes/users.routes.js';
 
 
 // console.log("Chave OpenAI:", process.env.OPENAI_API_KEY);  // Adicione isso para verificar se a chave está sendo carregada
