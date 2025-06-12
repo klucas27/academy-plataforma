@@ -1,6 +1,6 @@
 export async function loginAndStoreUser(username, password) {
     try {
-        const response = await fetch(`https://estokeasy.com.br/bugapi/login/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+        const response = await fetch(`https://estokeasy.com.br/api/users/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
         const data = await response.json();
 
         if (response.ok && data.success) {
