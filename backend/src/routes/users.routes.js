@@ -4,12 +4,12 @@ import { createUsersTable, checkUser } from '../models/users.js';
 const router = express.Router();
 
 
-router.get('/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         // Garante que a tabela existe antes de qualquer operação
         await createUsersTable();
 
-        const { username, password } = req.query;
+        const { username, password } = req.body;
         if (!username || !password) {
             return res.status(400).json({ error: 'Usuário e senha são obrigatórios.' });
         }
