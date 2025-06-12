@@ -1,4 +1,4 @@
-import { getStoredUser } from './login.js'
+import { getStoredUser } from './login.js';
 
 const userObj = getStoredUser();
 

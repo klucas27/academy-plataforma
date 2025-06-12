@@ -1,7 +1,6 @@
-import { getUser } from './login.js'
+import { getStoredUser } from './login.js';
 
-const { user, passwd } = getUser()
-
+const userObj = getStoredUser();
 
 document.addEventListener("DOMContentLoaded", () => {
     editNameUser()
@@ -9,5 +8,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function editNameUser() {
-        document.getElementById("dropdown-username").innerText = user
+        document.getElementById("dropdown-username").innerText = userObj.username
     }

@@ -1,8 +1,8 @@
 import { accessOpen } from './accessOpenAi.js'
 
-import { getUser } from './login.js'
+import { getStoredUser } from './login.js';
 
-const { user, passwd } = getUser()
+const userObj = getStoredUser();
 
 
 let resp_question = ""
@@ -95,5 +95,5 @@ async function verResposta(resp) {
 }
 
 async function editNameUser() {
-    document.getElementById("dropdown-username").innerText = user
+    document.getElementById("dropdown-username").innerText = userObj.username
 }
