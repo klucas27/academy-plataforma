@@ -8,7 +8,7 @@ export async function loginAndStoreUser(username, password) {
             body: JSON.stringify({ username, password })
 
         });
-        const data = await response.json();
+        const data = response.json();
 
         if (response.ok && data.success) {
             // Salva todas as informações do usuário no localStorage

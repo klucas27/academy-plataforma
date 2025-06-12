@@ -3,7 +3,6 @@ import { gerarPergunta } from '../services/openai.service.js';
 
 const router = express.Router();
 
-router.get('/test', (req, res) => res.json({ ok: true }));
 
 router.post('/openai', async (req, res) => {
 
@@ -21,5 +20,7 @@ router.post('/openai', async (req, res) => {
     res.status(500).json({ erro: e.message });
   }
 });
+
+router.get('/test', (req, res) => res.json({ ok: true }));
 
 export default router;
