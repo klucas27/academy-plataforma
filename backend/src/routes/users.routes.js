@@ -3,6 +3,7 @@ import { createUsersTable, checkUser } from '../models/users.js';
 
 const router = express.Router();
 
+router.get('/test', (req, res) => res.json({ ok: true }));
 
 router.post('/login', async (req, res) => {
     try {
