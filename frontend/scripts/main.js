@@ -1,27 +1,24 @@
-import { getUser } from './login.js'
-
-const { user, passwd } = getUser()
+import { loginAndStoreUser } from './login.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("enter-button-login").addEventListener("click", (e) => {
+    document.getElementById("enter-button-login").addEventListener("click", async (e) => {
         e.preventDefault();
-        enterLogin();
+        await enterLogin();
     });
 });
 
 
-function enterLogin() {
+async function enterLogin() {
     const user_add = document.getElementById("usuario").value;
     const passwd_add = document.getElementById("senha").value;
     document.getElementById('login-error').classList.add('d-none');
 
-    if (user_add == user && passwd_add == passwd) {
-        console.log(user_add, passwd_add);
-        window.location.href = "home.html"
+    const result = await loginAndStoreUser(user_add, passwd_add);
 
+    if (result.success) {
+        window.location.href = "home.html";
     } else {
         document.getElementById('login-error').classList.remove('d-none');
     }
-
 }
