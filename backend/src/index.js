@@ -15,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api', desafioRoutes);
+app.use('/api/users', usersRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
