@@ -1,11 +1,14 @@
-let user = "test"
-let passwd = "123"
+import { getUser } from './login.js'
+
+const { user, passwd } = getUser()
 
 
-document.getElementById("enter-button-login").addEventListener("click", (e) => {
-    e.preventDefault();
-    enterLogin();
-})
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("enter-button-login").addEventListener("click", (e) => {
+        e.preventDefault();
+        enterLogin();
+    });
+});
 
 
 function enterLogin() {
@@ -22,4 +25,3 @@ function enterLogin() {
     }
 
 }
-

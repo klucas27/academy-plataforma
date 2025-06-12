@@ -38,6 +38,14 @@
                         <i class="fa-solid fa-user text-primary"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                        <li>
+                            <span class="dropdown-item-text fw-bold">
+                                <i class="fa-solid fa-user text-primary me-2"></i><span id="dropdown-username"></span>
+                            </span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -48,7 +56,6 @@
             </ul>
         </div>
     </header>
-
 
     <!-- Slide-bar lateral esquerda -->
     <div class="offcanvas offcanvas-start d-md-flex flex-column flex-shrink-0 p-3 bg-white shadow" tabindex="-1"
@@ -112,7 +119,7 @@
             </form>
         </div>
     </main>
-    <script src="scripts/main.js"></script>
+    <script type="module" src="../scripts/feedbacks.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

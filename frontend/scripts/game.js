@@ -1,10 +1,16 @@
 import { accessOpen } from './accessOpenAi.js'
 
+import { getUser } from './login.js'
+
+const { user, passwd } = getUser()
+
+
 let resp_question = ""
 
 document.addEventListener("DOMContentLoaded", () => {
 
     carregarPergunta();
+    editNameUser();
 
     document.getElementById("btn-proxima-questao").addEventListener("click", (e) => {
         e.preventDefault();
@@ -86,4 +92,8 @@ async function verResposta(resp) {
         document.getElementById("notification-acerto").style.color = "red"
 
     }
+}
+
+async function editNameUser() {
+    document.getElementById("dropdown-username").innerText = user
 }

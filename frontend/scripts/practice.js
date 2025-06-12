@@ -1,4 +1,7 @@
 import { accessOpen } from './accessOpenAi.js'
+import { getUser } from './login.js'
+
+const { user } = getUser()
 
 
 let desafio_proposto = ""
@@ -8,12 +11,13 @@ let desafiosAnteriores = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     createNewChallenge();
+    editNameUser();
 
     document.getElementById("button-verificar").addEventListener("click", (e) => {
         e.preventDefault();
         verificarDesafio();
     })
-    
+
     document.getElementById("btn-proxima-desafio").addEventListener("click", (e) => {
         e.preventDefault();
         createNewChallenge();
@@ -90,10 +94,13 @@ async function verificarDesafio() {
         "comentario_do_codigo": "..."
         }
         `;
-    
-        const dados = await accessOpen(prompt)
 
-        document.getElementById("question-prop").innerText = dados.comentario_do_codigo
+    const dados = await accessOpen(prompt)
+
+    document.getElementById("question-prop").innerText = dados.comentario_do_codigo
 
 }
 
+async function editNameUser() {
+    document.getElementById("dropdown-username").innerText = user
+}
