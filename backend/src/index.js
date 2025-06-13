@@ -25,11 +25,6 @@ app.use(express.json());
 app.use('/bugapi/api', desafioRoutes);
 app.use('/bugapi/users', usersRoutes);
 
-app.get('/bugapi/users/teste', (req, res) => {
-  res.send('✅ Backend funcionando!');
-});
-
-
 console.log("✅ Middleware e rotas registrados.");
 
 
