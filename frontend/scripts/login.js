@@ -1,6 +1,6 @@
 export async function loginAndStoreUser(username, password) {
     try {
-        const response = await fetch(`https://estokeasy.com.br/bugapi/users/login`, {
+        const response = await fetch(`https://estokeasy.com.br/bugapi/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
