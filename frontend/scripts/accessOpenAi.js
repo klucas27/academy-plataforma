@@ -1,7 +1,7 @@
 
 export async function accessOpen(prompt) {
 
-    const resposta = await fetch(`https://estokeasy.com.br/bugapi/openai`, {
+    const resposta = await fetch(`https://estokeasy.com.br/bugapi/api/openai`, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
