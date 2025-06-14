@@ -10,9 +10,15 @@ import desafioRoutes from './routes/desafio.routes.js';
 // console.log("Chave OpenAI:", process.env.OPENAI_API_KEY);  // Adicione isso para verificar se a chave está sendo carregada
 
 const app = express();
+
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://academygame.netlify.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false
+}));
 
 app.use(express.json());
 
