@@ -22,8 +22,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/bugapi/api', desafioRoutes);
-app.use('/bugapi/users', usersRoutes);
+app.use('/openai-access', desafioRoutes);
+app.use('/users', usersRoutes);
 
 console.log("✅ Middleware e rotas registrados.");
 
