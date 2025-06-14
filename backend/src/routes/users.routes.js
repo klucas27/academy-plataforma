@@ -25,5 +25,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.get('/test', (req, res) => res.json({ ok: true }));
 
-export default router;
+
+export default {router};
