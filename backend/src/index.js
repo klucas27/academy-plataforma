@@ -11,11 +11,7 @@ import desafioRoutes from './routes/desafio.routes.js';
 
 const app = express();
 
-app.use(cors({
-  origin: ['https://academygame.netlify.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 
