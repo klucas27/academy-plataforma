@@ -22,7 +22,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/openai-access', desafioRoutes);
+app.use('/openaiuse', desafioRoutes);
 app.use('/users', usersRoutes);
 
 console.log("✅ Middleware e rotas registrados.");
