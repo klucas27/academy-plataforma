@@ -1,14 +1,13 @@
 export async function loginAndStoreUser(username, password) {
     try {
-        const response = await fetch(`https://estokeasy.com.br/bugapi/users/login`, {
+        const response = await fetch(`https://estokeasy.com.br/academy/users/login`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ username, password })
-
         });
-        const data = response.json();
+        const data = await response.json(); // Corrigido: await para obter o JSON
 
         if (response.ok && data.success) {
             // Salva todas as informações do usuário no localStorage
@@ -21,7 +20,6 @@ export async function loginAndStoreUser(username, password) {
         return { success: false, error: 'Erro ao conectar ao servidor.' };
     }
 }
-
 export function getStoredUser() {
     const user = localStorage.getItem('user');
     return user ? JSON.parse(user) : null;
